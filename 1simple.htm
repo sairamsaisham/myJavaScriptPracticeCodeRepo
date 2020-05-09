@@ -1,0 +1,87 @@
+<html>
+<head>
+
+    //coverting strings into numbers//
+    <script>
+        function addNumbers()
+        {
+            var firstNumber = document.getElementById("txtFirstNumber").value;
+            
+            if(firstNumber=="")
+            {
+                alert("First number is required!");
+                return;
+            }
+            if(isNaN(firstNumber))
+            {
+                alert("please enter a valid number in first number textbox!");
+                return;
+                
+            }
+            var firstNumber = parseFloat(firstNumber);
+
+            
+
+            var secondNumber = document.getElementById("txtSecondNumber").value;
+            if(secondNumber=="")
+            {
+                alert("Second number is required!");
+                return;
+            }
+            if(isNaN(secondNumber))
+            {
+                alert("please enter a valid number in second number textbox!");
+                return;
+            }
+            var secondNumber = parseFloat(secondNumber);
+           
+
+           document.getElementById("txtResult").value = firstNumber + secondNumber;
+
+
+        }
+        </script>
+</head>
+<body>
+<form>
+<table style="border: 1px solid black; font-family:Arial;">
+<tr><td>
+    First Number:
+</td>
+<td>
+    <input type="text" id="txtFirstNumber" name="FirstNumber" />
+</td>
+</tr>
+<tr>
+    <td>
+    Second Number:
+</td>
+<td>
+    <input type="text"  id="txtSecondNumber" name="SecondNumber">
+</td>
+</tr>
+<tr>
+    <td>
+        Result:
+    </td>
+    <td>
+        <input type="text" id="txtResult" name="result">
+    </td>
+</tr>
+<tr>
+    <td>
+
+    </td>
+    <td>
+        <input type="button" value="Add" onclick="addNumbers()">  
+    </td>
+</tr>
+
+</table>
+
+
+
+</form>      
+</body>
+</html>
+
