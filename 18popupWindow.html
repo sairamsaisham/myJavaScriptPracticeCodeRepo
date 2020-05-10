@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popup window</title>
+</head>
+<body>
+    <!-- To open a popup window, use window.open() method. All the parameters are optional.-->
+    <!-- window.open(URL, name, features, replace)-->
+    <input type="button" value="open popup" onclick="window.open()" >
+
+    <!-- Most modern browsers open new tabs instead of separate wnidows.
+    To open the popup in a new window, specify the URL, name, features(height, width)
+    Parameters. This may not work in all browsers and it also depends on
+    user's browser preferences. -->
+    <input type="button" value="Open popup _blank" 
+    onclick="window.open('http://google.com', '_blank', 'height=300,width=300')" />
+
+    <input type="button" value="Open popup _self" 
+    onclick="window.open('http://google.com', '_self')" />
+
+    <input type="button" value="Open popup my window" 
+    onclick="window.open('http://google.com', 'My Window', 'height=300,width=300,left=100,top=100')" />
+    <br /><br />
+
+    <!--Disable scrollbars and resizing. NOTE: works in IE not in chrome-->
+    <input type="button" value="Open popup" 
+    onclick="window.open('http://google.com', 'MY Window', 'height=300,width=300,scrollbars=no,resizing=no')" />
+    <br /><br />
+
+    <!-- TO close popup use window.close() method-->
+    <input type="button" value="Open Popup" onclick="openPopup()" />
+    <input type="button" value="Close Popup" onclick="closePopup()" />
+
+    <script>
+        var popup;
+        function openPopup()
+        {
+            popup = window.open("http://goolge.com", "my window", "height=300,width=300");
+        }
+
+        function closePopup()
+        {
+            popup.close();
+        }
+    </script>
+
+</body>
+</html>

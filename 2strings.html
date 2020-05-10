@@ -1,0 +1,97 @@
+<html>
+    <head>
+        <script>
+            //concatening using + operator//
+            /* var myString1 = "swetha";
+            var myString2 = "vedhansh";
+            var result = myString1 + " " + myString2;
+            alert(result); */
+
+            //concatening using concat() method//
+            /*  var myString1 = "swetha";
+            var myString2 = "vedhansh";
+            var result = myString1.concat(" ",myString2);
+            alert(result); */
+
+           //convert to uppercase//
+            /* var upperCaseString =  "rakesh gadipelli";
+            alert(upperCaseString.toUpperCase()); */
+
+            //length property//
+           /*  var stringLength = "learning javascript";
+            alert(stringLength.length); */
+
+            //trim() method//
+            /* var myString1 = " swetha ";
+            var myString2 = " vedhansh ";
+            var result = myString1.trim() + myString2.trim();
+            alert(result); */
+
+            //replace() method//
+            /* var myString1 = "swetha vedha";
+            var result = myString1.replace("swetha"," rakesh");
+            alert(result); */
+
+            //replace() using regular expression(perform a case-sensitive global replacement)//
+            /* var myString1 = "swetha vedha and vedhansh Vedhansh";
+            var result = myString1.replace(/vedha/g, "rakesh");
+            alert(result); */
+
+            //replace() using regular expression(perform a case-insensitive global replacement)//
+            /* var myString1 = "swetha vedha and vedhansh Vedhansh";
+            var result = myString1.replace(/vedha/gi, "rakesh");
+            alert(result);  */
+
+            //substring() method to extract characters using start and end parameters//
+            /* var myString1 = "JavaScript tutorial : substring() method";
+            var result = myString1.substring(0, 13);
+            alert(result); */
+            
+
+            //substring(): if Strat parameter > End parameter then it will swap parameters automatically.//
+            /* var myString2 = "JavaScript tutorial : substring() method";
+            var result = myString2.substring(13, 0);
+            alert(result); */
+            
+            //substr() method//
+           /*  var myString1 = "JavaScript tutorial : substr() method";
+            var result = myString1.substr(0, 13);
+            alert(result); */
+
+            //substr(): if count or length parameter not specified, Then.//
+            /* var myString1 = "JavaScript tutorial : substr() method";
+            var result = myString1.substr(13);
+            alert(result);*/
+
+            //slice() method also will give same as substring() and substr()//
+
+            //indexOf(): Retrieve the first index position of '@'' character in the email.//
+            /* var myString1 = "saiswetha@gmail.com";
+            var result = myString1.indexOf("@");
+            alert(result); */
+
+            //lastIndexOf(): Retrieve the last index position of '@' character in the email.//
+            var myString1 = "saiswetha@gmai@l.com";
+            var result = myString1.lastIndexOf("@") + 1;
+            var result1 = myString1.lastIndexOf(".");
+            var result2 = myString1.substring(result, result1);
+            document.write(result + "<br />");
+            document.write(result1 + "<br />");
+            document.write(result2);
+
+
+
+
+
+
+
+
+
+
+        </script>
+    </head>
+    <body>
+        
+  </body>
+</html>
+      

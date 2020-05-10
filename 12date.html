@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <script>
+            ////Date(): to create date object in javascript use date constructer.
+            //Ex: write current Date and Time to the web page.
+            
+            
+            document.write(new Date()); 
+
+            ////To create a date object with specific dates there are two ways.
+            // 1. using date string.
+            /* var dateOfBirth = new Date("january 13, 1990 11:20:00" + "<br />");
+            document.write(dateOfBirth); */
+
+            // 2. using number for year, month, day, hours, minutes, seconds & milliseconds.
+            /* var dateOfBirth = new Date(1990, 0, 13, 11, 20, 00, 00);
+            document.write(dateOfBirth); */
+
+            ////How to get the month name from the month number.
+           /*  var dateOfBirth = new Date("january 13, 1990 11:20:00");
+            var monthNumber = dateOfBirth.getMonth();
+
+            
+            function getMonthNameFromMonthNumber(monthNumber)
+            {
+                var monthNames = ["jan", "Feb", "Mar", "april", "may", "june", "july", "aug", "sep", "oct", "nov", "Dec"];
+                return monthNames[monthNumber];
+
+            }
+            document.write(getMonthNameFromMonthNumber(monthNumber)); */
+
+            ////to get 'Day' name:
+            /* var dateOfBirth = new Date("january 13, 1990 11:20:00");
+            var dayNumber = dateOfBirth.getDay();
+
+            document.write(getDayNamefromDayNumber(dayNumber));
+
+            function getDayNamefromDayNumber(day)
+            {
+                var dayNames = ["Sunday", "Monday", "Tuesday", "wednesday", "thursday", "Friday", "saturday"];
+                return dayNames[dayNumber];
+            } */
+
+            ////How to convert date in javascript to 'dd//mm//yyyy' format.
+            /* function formatDate(dates)
+            {
+                var date = dates.getDate();
+             
+                if(date < 10)
+                {
+                    date = "0" + date;
+                }
+                var month = dates.getMonth() + 1;
+                if(month < 10)
+                {
+                    month = "0" + month;
+
+                } 
+                var year = dates.getFullYear();
+                return date + "/" + month + "/" + year; 
+
+            }
+            document.write(formatDate(new Date())); */
+
+
+
+
+        </script>
+
+    </head>
+    <body>
+
+    </body>
+</html>

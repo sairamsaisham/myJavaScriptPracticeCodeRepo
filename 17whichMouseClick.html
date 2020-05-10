@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+</head>
+<body>
+    
+     <!-- javascript mouse events -->
+     <input type="button" value="single, double or contextMenu"
+     onmouseup="logEvent(event)" onclick="logEvent(event)" oncontextmenu="logEvent(event)"
+     onmousedown="logEvent(event)"  onmouseover="logEvent(event)"
+     ondblclick="logEvent(event)" onmouseout="logEvent(event)"  />
+     
+     <input type="button" value="clear" onclick="clearTextArea1()" />
+     <br /><br />
+     <textarea id='txtAreaMouseEvents'  cols='20' rows='10'></textarea>
+
+
+    <!-- JavaScript to detect which mouse button is clicked -->
+    <input type="button" value="Click me" onmouseup="whichMouseButtonClicked(event)">
+   <!-- <input type="button" value="clear" onclick='clearTextarea()'>-->
+    <br /><br />
+    <!--<textarea id='txtArea' cols="20" rows="3"></textarea>-->
+
+    <script>
+        //JavaScript to detect which mouse button is clicked
+
+      /*   function clearTextarea()
+        {
+          document.getElementById('txtArea').value = ' ';
+        }
+
+        function getMouseClickCode(event)
+        {
+            if(event.which)
+            {
+                document.getElementById('txtArea').value += "event.which = " + event.which + '\r\n';
+            }
+            else
+            {
+                document.getElementById('txtArea').value += 'event.button = ' + event.button + '\r\n';
+            }
+        }
+ */
+
+   ///// the following code works in all versions of IE and
+   //-most other w3c complaint browsers.
+
+   function whichMouseButtonClicked(event)
+   {
+       var whichButton;
+       if(event.which)
+       {
+           switch(event.which){
+               case 1: whichButton = 'Left button clicked';
+               break;
+               case 2: whichButton = 'middle button clicked';
+               break;
+               case 3: whichButton = 'right button clicked';
+               break;
+               default : whichButton = 'Inavalid button clicked';
+               break;
+           }
+       }
+       else{
+           switch(event.button){
+            case 1: whichButton = 'Left button clicked';
+               break;
+               case 4: whichButton = 'middle button clicked';
+               break;
+               case 2: whichButton = 'right button clicked';
+               break;
+               default : whichButton = 'Inavalid button clicked';
+               break;
+           }
+       }
+       alert(whichButton);
+   }
+
+        document.oncontextmenu = preventDefaultAction;
+        function preventDefaultAction(event)
+        {
+            event = event || window.event;
+            if(event.preventDefault)
+            {
+                event.preventDefault();
+            }
+            else
+            {
+                event.returnValue = false;
+            }
+        }
+
+        /*******************************************/
+        //javascript mouse events
+
+        function clearTextArea1()
+        {
+            document.getElementById('txtAreaMouseEvents').value = ' ';
+        }
+
+        function logEvent(event)
+        {
+            event = event || window.event;
+            document.getElementById('txtAreaMouseEvents').value += event.type + ' \r\n';
+
+        }
+    </script>
+</body>
+</html>

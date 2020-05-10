@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <script>
+         //// TimingEvents: In javascript a piece of code can be executed at specified time inravels.
+        ////The global window object has th efollowing 2 methods.
+
+        //to get current Date and Time:
+        /* getCurrentDateTime();
+        function getCurrentDateTime()
+        {
+          document.getElementById("timeDiv").innerHTML = new Date();
+        } */ /// (Doubt) this code is not getting Date & Time in the output, to see output write this code before HTML body closing tag.
+         
+
+         //// 1. starting and stoping the clock with button click.
+        /*  var intervalID;
+         function startClock()
+         {
+          intervalID = setInterval(getCurrentDateTime, 2000);
+         }
+         function stopClock()
+         {
+           clearInterval(intervalID);
+         }
+         function getCurrentDateTime()
+         {
+           document.getElementById("timeDiv").innerHTML = new Date();
+         } */
+          
+
+       //// 2. starting and stoping Timer with button clicks
+          /* var intervalID;
+       function startTimer(controlId)
+       {
+         var control = document.getElementById(controlId);
+         var seconds = control.value;
+         seconds = seconds - 1;
+
+         if(seconds == 0)
+         {
+             control.value = "Done";
+             return;
+         }
+         else{
+             control.value = seconds;
+         }
+         
+         intervalID = setTimeout(function () { startTimer('txtBoxTimerCount'); }, 1000);
+       }
+
+       function stopTimer()
+       {
+           clearTimeout(intervalID);
+       }   */
+
+       //***********************************************//
+       // images slideshow:
+        var intervalID;
+
+       function startSlideShow()
+       {
+        intervalID = setInterval(changeImage, 1000);
+       }
+       function stopSlideShow()
+       {
+         clearInterval(intervalID);
+       }
+       function changeImage()
+       {
+         var imageSrc = document.getElementById("image").getAttribute("src");
+        var currentImageNumber = imageSrc.substring(imageSrc.lastIndexOf("/") + 1, imageSrc.lastIndexOf(".")); //  /images/1.jpg
+        
+         if(currentImageNumber == 11)
+        {
+          currentImageNumber = 0;
+        } 
+        var newImage = "/Images/" + (Number(currentImageNumber) + 1) + ".jpg";
+  
+        document.getElementById("image").setAttribute("src", newImage); 
+        document.getElementById("result").innerHTML = newImage;
+      }
+ 
+      </script>
+
+       
+    </head>
+    <body>
+         <!-- <div id="timeDiv">
+            
+        </div>
+        <input type = "button" value = "Start clock" onclick="startClock()" />
+         <input type = "button" value = "Stop clock" onclick="stopClock()" /> -->
+
+       <!--  <input type = "text" value = "10" id = "txtBoxTimerCount" /><br />
+      <input type = "button" value = "Start Timer" onclick="startTimer('txtBoxTimerCount')" />
+      <input type = "button" value = "Stop Timer" onclick="stopTimer()" /> 
+ -->
+      
+         <img src = "Images/1.jpg" alt = "vedha pics" id="image" /><br /><br />
+         <input type = "button" value = "Start slideShow" onclick="startSlideShow()" />
+         <input type = "button" value = "Stop slideShow" onclick="stopSlideShow()" />
+          <br />
+          <div id = "result">
+
+          </div> 
+    </body>
+</html>

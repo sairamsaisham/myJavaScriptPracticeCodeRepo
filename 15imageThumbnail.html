@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Thumbnails</title>
+    <style>
+    .imgStyle
+    {
+        height:100px;
+        width:100px;
+        border:3px solid grey;
+    }
+    </style>
+</head>
+<body>
+    <img src = "Images/1.jpg" alt="vedha pic" id="mainImage"
+     width ="540px" height = "500px" 
+     style="border: 3px solid grey" />
+    <br />
+    <div id="myDiv" onclick="changeImage(event)" >
+    <img class = "imgStyle" src = "Images/1.jpg" />
+    <img class = "imgStyle" src = "Images/2.jpg" />
+    <img class = "imgStyle" src = "Images/3.jpg" />
+    <img class = "imgStyle" src = "Images/4.jpg" />
+    <img class = "imgStyle" src = "Images/5.jpg" />
+    </div>
+    
+ 
+<script src="imageThumbnail.js">
+
+</script>
+
+</body>
+</html>
+
+
+

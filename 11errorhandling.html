@@ -1,0 +1,98 @@
+<html>
+    <head>
+        <script>
+         ////Error handling in javascript:
+         //Here we have to use try/catch,finally to handle runtime errors, These runtime errors called as Exceptions.
+         //Example:
+        /*  try{
+             document.write(sayHello());// here sayHellow() not defined so it cause an exception and controls 
+             // - immedeatley transsferd to a catch block.
+        
+         }
+         catch (e)
+         {
+             document.write("Message is  = " + e.message + "<br>");
+             document.write("Description = " + e.description + "<br>");
+             document.write("Stack trace = " + e.stack + "<br>");
+         }
+         finally{
+             document.write("This line is gurenteed to execute");
+         }  */
+
+         ////syntax errors will not caught by try/catch/finally.
+         /* try{
+             alert("Hello";
+         }
+         catch(e)
+         {
+             document.write("javascript syntax errors cannot be caught in the catch block");
+         } */
+
+         ////throw statement: Use a throw statement to raise a customized exceptions.
+         //example: divide numbers:
+         /* function divide()
+         {
+            var numerator = Number(prompt("Please enter numerator"));
+            var denominator = Number(prompt("plesse enter denominator"));
+         
+         try{
+             if(denominator == 0)
+             {
+                 throw{
+                     error : "Devide by zero error",
+                     message : "Denominator cannot be ZERO"
+                 };
+             }
+             else{
+                 alert("Result is " + (numerator / denominator));
+             }
+         }
+         catch (e)
+         {
+             document.write("Error =" + e.error + "<br />");
+             document.write("Message = " + e.message + "<br />");
+         }
+         }
+         divide(); */
+
+        ////window.onerror:If an error raised by a statement that is not inside a try/catch block, the 'onerror' event is fired.
+        //It has 3 parameters (message, url, line)
+       /*  window.onerror = function (message, url, line)
+        {
+        alert("Message :" + message + "\nUrl :" + url + "\nLine :" +line);
+        return true;
+        }
+        NonExistingFunction(); */
+
+        //If the error is handled by a try/catch block then, onerror event is not raised.
+        //onerror event is raised only when there is an unhandled exception.
+       /* window.onerror = function (message, url, line)
+        {
+            alert("Message: " + message + "\nURL: " + url + "\nLINE: " + line);
+            return true;
+        }
+        try{
+            NonExistingFunction();
+        }
+        catch (e)
+        {
+            document.write("Message is: " + e.message);
+        }  */
+
+        ////onerror event handler method can also be used with HTML elements:
+        //Example:
+        function imageErrorHandler()
+        {
+            alert("There is a problem loading the image");
+        }
+
+       
+        </script>
+        
+    </head>
+    <body>
+<form>
+    <img src="NonExistingImage.jpg" onerror="imageErrorHandler()" />
+</form>
+    </body>
+</html>

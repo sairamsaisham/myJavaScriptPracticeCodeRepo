@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regular Expressions</title>
+</head>
+<body>
+    <!--Regular expression is a sequence of characters that forms a search pattern-->
+    <input type="text" id='txtBox' style="width: 250px">
+    <br /><br />
+    <input type="button" value="Process String" style="width: 250px" onclick="processString()" />
+    <br /><br />
+    <textarea id='txtArea' rows="5" cols="35"></textarea> 
+    <br /><br />
+
+    <!-- regular expression for password -->
+    password:
+    <input type="password" id='pswd' style="width: 250px">
+    <input type="button" value="checkPasswordIs Valid" id='btn' onclick="validatePassword()"/>
+   
+    <textarea id='result' rows="5" cols="35"></textarea> 
+    <br /><br />
+    Email: <input type="text" id="txtEmail" onkeyup="validateEmail()" />
+
+    <script>
+        function processString()
+        {
+            document.getElementById('txtArea').value='';
+
+           var inputString = document.getElementById('txtBox').value;
+
+           var result = inputString.match(/\d+/g); // here g is global match
+           if(result != null)
+           {
+           for(var i = 0; i < result.length; i++)
+           {
+             document.getElementById('txtArea').value += result[i] + "\r\n";
+           }
+        }
+           document.getElementById('txtBox').value='';
+        }
+
+        /**********************************************/
+        //// Validate the password
+        function validatePassword()
+        {
+           
+           var userPassword = document.getElementById('pswd').value;
+
+           //var storePassword = userPassword;
+           
+           var storePassword = userPassword.match(/^(?=.*\d).{4,8}$/);
+           if(storePassword) {
+            document.getElementById('result').value = storePassword;
+           }
+           else {
+            alert('Password must be between 4 and 8 digits long and include at least one numeric digit.');
+           }
+
+           document.getElementById('pswd').value = '';
+                     
+        }
+        /****************************************************/
+        ////validate Email:
+        function validateEmail()
+        {
+            var emailTextBox = document.getElementById('txtEmail');
+            var email = emailTextBox.value;
+            var emailRegEx = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+        
+            emailTextBox.style.color = 'white';
+
+            if(emailRegEx.test(email))
+            {
+                emailTextBox.style.backgroundColor = 'green';
+            }
+            else
+            {
+                emailTextBox.style.backgroundColor = 'red';
+            }
+        }
+
+        /************************************************/
+        ////Javascript Strings & Regular expressions:
+        // regular expressions can be used with the following string methods.
+        // match(), replace(), split(), search().
+        //and Modifiers can be used with regular expressions to specify the kind of search
+        // g -- Global search
+        // i -- Case-insensitive search
+        // m -- Multiline search
+        // Using regular expression with match() method:
+        
+       /*  var string = "Tom contact number is 1011011010. His age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        document.write(string.match(/\d+/g)); */
+
+        //replace(regular expresssion, replace value)
+        /* var string = "Tom contact number is 1011011010. His age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        document.write(string.replace(/\d+/g, "xxx")); */
+
+        //split()
+         /* var string = "Tom contact number is 1011011010. His age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        document.write(string.split(' '));  */
+
+        //search()
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        document.write(string.search(/\d+/g)); */
+
+        //Global case insensitive match using regular expression
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        document.write(string.match(/toM/gi)); */
+
+        /*************************************************/
+        //// There are two ways to create a regular expression in javascript
+        // 1. using a regular expression literal:
+       /*  var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+
+        var regex = /\d+/g;
+        document.write(string.replace(regex, 'xxx')); */
+
+        // 2. Using the constuctor function of the regular expression object.
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+          
+        var regex = new RegExp("\\d+", "g");
+        document.write(string.replace(regex, 'xxx')); */
+
+        ////Commonly used regexp object properties:
+        //global - ,ignoreCase, multiLine, source...
+
+       /*  var regex = new RegExp("\\d+", "g");
+
+        document.write("g = " + regex.global + '<br />');
+        document.write("i = " + regex.ignoreCase + '<br />');
+        document.write("m = " + regex.multiline + '<br />');
+        document.write("source = " + regex.source + '<br />'); */
+
+        ////Commonly used RegExp object methods:
+        // exec(), test(), toString()
+        //exec(): method returns the first match
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+          
+        var regex = new RegExp("\\d+", "g");
+        document.write(regex.exec(string)); */
+
+        // To get the all matches call. exec() method repeatedly with the g flag.
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+          
+        var regex = new RegExp("\\d+", "g");
+        var result;
+
+        while((result = regex.exec(string)) != null)
+        {
+          document.write(result[0] + '<br />');
+        } */
+
+        // test(): it returns true or false
+        /* var string = "Tom contact number is 1011011010. tom age is 35.";
+        string += "Mark contact number is 893834985853. His age is 45";
+          
+        var regex = new RegExp("\\d+", "g");// here we can also use regexp litaral. the exec(), test() both output will get same.
+        document.write("the given string contain numbers = " + regex.test(string)); */
+       
+        // we can write also like below 
+        //document.write("the given string contain numbers = " + /\d+/g.test(string));
+       
+
+
+
+    </script>
+
+</body>
+</html>

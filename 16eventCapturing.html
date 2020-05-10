@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Capturing</title>
+    <style>
+        .divStyle
+        {
+            display: table-cell;
+            border: 3px solid black;
+            padding: 20px;
+            text-align: center;
+
+        }
+    </style>
+</head>
+<body>
+    <div id='div1' class='divStyle'>DIV1
+        <div id='div2' class = 'divStyle'>DIV2
+            <div id='div3' class= 'divStyle'>DIV3
+
+            </div>
+        </div>
+    </div>
+     
+    <!-- to prevent browser default action -->
+    <h1>On this page right click is disabled</h1>
+    <a href='www.proounce.com' onclick='preventDefaultAction(event)'>Go To Proounce website</a> <!-- or onclick='return false' -->
+    <br /><br />
+
+    
+
+    <script>
+        var divElements = document.getElementsByTagName('div');
+        for(var i = 0; i < divElements.length; i++)
+        {
+            divElements[i].addEventListener('click', clickHandler, true);// third parameter set true means event capturing is enabled
+            divElements[i].addEventListener('click', clickHandler, false);// set to false means event bubbled is enabled
+        }
+        
+        function clickHandler()
+        {
+           alert(this.getAttribute('id') + ' event is handled');
+        }
+
+        /***************************************************************/
+        ////How to prevent browser default action
+       
+        document.oncontextmenu = preventDefaultAction;
+        function preventDefaultAction(event)
+        {
+            event = event || window.event;
+            if(event.preventDefault)
+            {
+                event.preventDefault();
+            }
+            else
+            {
+                event.returnValue = false;
+            }
+        }
+       
+        
+
+
+    </script>
+</body>
+</html>

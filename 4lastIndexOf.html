@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <script>
+            function getTopLevelDomain(){
+                var websiteUrl = document.getElementById("txtWebsiteUrl").value;
+                var topLevelDomain = websiteUrl.substring(websiteUrl.lastIndexOf("."));
+
+                document.getElementById("txtTopLevelDomain").value = topLevelDomain;
+            }
+        </script>
+    </head>
+    <body>
+<form>
+    <table style="border: 1px solid black; font-family:Arial;">
+    <tr><td>
+        Website URL:
+    </td>
+    <td>
+        <input type="text" id="txtWebsiteUrl" name="Website Url" />
+    </td>
+    </tr>
+    <tr>
+        <td>
+        Top level domain:
+    </td>
+    <td>
+        <input type="text"  id="txtTopLevelDomain" name="Top level domain">
+    </td>
+    </tr>
+    
+    <tr>
+        <td>
+    
+        </td>
+        <td>
+            <input type="button" value="Get top level domain " onclick="getTopLevelDomain()" >  
+        </td>
+    </tr>
+    
+    </table>
+    
+    
+    
+    </form>      
+    </body>
+    </html>

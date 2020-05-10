@@ -1,0 +1,193 @@
+<html>
+    <head>
+        <script>
+         ////function is a block of reusable code.
+         //Add two numbers:
+
+         /* function addNumbers(firstNumber, secondNumber)
+         {
+             var sum = firstNumber + secondNumber;
+             return sum;
+         }
+        var result = addNumbers(10, 20);
+        document.write(result); */
+     
+         //with out return keyword
+         /* function addNumbers(firstNumber, secondNumber)
+         {
+             var sum = firstNumber + secondNumber;
+             document.write(sum);
+         }
+         addNumbers(10, 20); */
+
+         //// A function call is present before and after the function defination.(output is same for both) It 
+         // -is called as "Function Hoisting": 
+         /* 
+         var result = addNumbers(10, 20);
+         document.write(result);
+
+         function addNumbers(firstNumber, secondNumber)
+         {
+             var sum = firstNumber + secondNumber;
+             return sum;
+         } */
+         
+         ////Defining a javascript function using function expression.There are 3 different ways of define a function expression.
+         //// 1. Anonymous function expression
+         /* var add = function (firstNumber, secondNumber)
+         {
+          var result = firstNumber + secondNumber;
+          return result;
+         }
+         var sum = add(10, 30);
+         document.write(sum); */
+
+         //if we declare function call before the anonymous function defination we won't get output .
+         /* var sum = add(10, 30);
+         document.write(sum);
+
+         var add = function (firstNumber, secondNumber)
+         {
+          var result = firstNumber + secondNumber;
+          return result;
+         } */
+
+         //// 2. Named function expression:
+        /*  var factorial = function computeFactorial(number)
+         {
+            if(number <= 1)
+           {
+               return 1;
+           }
+           return number * computeFactorial(number - 1);
+         }
+
+         var result = factorial(4);
+         document.write(result); */
+
+         //// 3. Self invoking function expression , 
+         /* var factorial = (function computeFactorial(number)
+         {
+             if(number <= 1)
+             {
+                 return 1;
+             }
+             return number * computeFactorial(number - 1);
+         })(5);
+
+         document.write(factorial); */
+
+         ////Local variables and Global variables
+         ////Local variables:
+         /* function helloWorld()
+         {
+             var greeting = "Hello";
+             greeting = greeting + "Java Script";
+             document.write(greeting);
+            
+         }
+         helloWorld();  */
+        
+
+
+         ////Global variables:
+         /* var greeting = "hello javascript";
+                
+         function helloWorld()
+         {
+             greeting = greeting + " swetha";
+             document.write(greeting);
+         }
+         helloWorld(); */
+         
+          ////
+         /* var greeting = "hello javascript";
+                
+         function helloWorld()
+         {
+             greeting = greeting + " swetha";
+             document.write(greeting);
+         }
+         helloWorld();
+         document.write("<br />");
+         document.write(greeting); */
+
+         //examples:
+         /* var greeting = "hello from Global variable";
+
+         function helloWorld()
+         {
+             var greeting = "hello from local variable";
+             greeting += "???";
+             document.write(greeting);
+         }
+
+         greeting += "!!!"
+         helloWorld();
+         document.write("<br />");
+         document.write(greeting); */
+
+         //examples:
+         /* var greeting ="This is global variable";
+         hello();
+
+         function hello()
+         {
+             document.write(greeting);
+             var greeting = "This is local variable";
+         } */
+         
+         ////Closure function: Ex: Create a closure by adding a function inside another function.
+        /*  function addNumbers(firstNumber, secondNumber)
+         {
+            var returnValue = "Result is: ";
+            function add()
+            {
+                return returnValue + (firstNumber + secondNumber);
+            }
+           return add();
+         }
+         var result = addNumbers(10, 30);
+         document.write(result); */
+
+         // same as the above code but slitly changed
+         
+         function addNumbers(firstNumber, secondNumber)
+         {
+            var returnValue = "Result is: ";
+            function add()
+            {
+                return returnValue + (firstNumber + secondNumber);
+            }
+           return add;
+         }
+         var myFunc = addNumbers(30, 40);
+         var result = myFunc();
+         document.write(result); 
+         
+         // same as the above code but slitly changed
+         /* function addNumbers(firstNumber, secondNumber)
+         {
+            var returnValue = "Result is: ";
+            function add()
+            {
+                return returnValue + (firstNumber + secondNumber);
+            }
+            return add;
+         }
+         var result = addNumbers(10, 30)();
+         
+         document.write(result); */
+           
+                     
+        
+        </script>
+    </head>
+    
+    <body>
+        <form>
+            
+        </form>
+    </body>
+</html>
+

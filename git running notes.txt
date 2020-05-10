@@ -1,0 +1,50 @@
+version controlling system (.git)-- it maintains version for each and every modification we do.
+source code management (GIT HUB)
+
+git clone:
+ git clone is a git command by default our windows machine will not be able to 
+- identify this git commands that is the reason we installed GIT.
+Note: clone is a git command what we have to use to clone code for the
+ first time in our local repository. will use this clone only for the first time.
+
+commands:
+
+1.ls -- list
+2.cd -- change directory
+3.git pull -- if we do any changes in github repository then we 
+               have to use this 'git pull' command to start pulling the file 
+               from my github repository to our local repositary(my local machine).
+4.cat -- to print the content of file
+5.git status --
+6.git add (file name) -- moving(adding) physical file to staging area.
+
+NOTE: (staging area):: we cannot directly move physical files to git hub, first we have to move phisycal file to staging area then
+                   those files are ready to commit through .git to GIT HUb(main repository)
+7.git commit -m "test" -- to commit to staging area to git(local repository).(instead of 'test' we can give anything its a commit message what we are changing or commiting here)
+8.git push origin a master -- it starts pushing from local repository to GIt HUb repositaory.
+                          (origin -- origin is a alias name for our repository)(master -- is nothing but a branch name)
+9.git remote -v -- to know which repository we are working now.
+10.git add . -- moving(adding) all physical files to staging area.
+11.git add fileName1 fileName2 -- we can also add like this. giving filenames with space separator.
+12.git add --all -- 
+13.git remote add origin http://this link will available in mainRepo -- it will add GIT HUB to our local repository. instead of 'origin' name we can give 'abc' or 'any other name which we want to put'.
+
+Branch: branch is nothing but copy of source code. source code is nothing but the code what we written to develop the application.
+       
+example: we can do separate source code using branches. master branch, testing branch, pre prodiction branch , prodiction branch 
+         (Development application server, testing application server, production application server).
+creating branches from local repository using some following commands:
+--> git brach: to list branches
+--> git branch cdt : it creates new branch here, 'cdt' is our new branch name.
+--> git checkout cdt: it switchs one branch to another branch(that means on which branch we want to work)
+--> git checkout -b <newbranchname>: creating and switching to new branch.
+--> git branch -m <oldname> <new name>: Renaming a branch.
+--> git branch -m <newname>: Renaming current branch.
+--> git merge master: to merge branches(ex: here master to cdt)
+--> :wq : after merging one branch to another branch we need to type this. (wq- write and quit).
+--> git log: to see commit messages from local git.
+
+git ignore: when a new repository created that we can select this .gitignore file. in that we can select java extensions. we can ignore .class files or .log files 
+Note: if we forgot to add .gitignore file while creating new repository we can download it from net using this url(gitignore.io), here u can search java or any language . there u can copy content
+     and create .gitignore file in our local repository and paste inside .gitignore, then u can push this file to GIT HUB.
+ls -la : it shows hidden files.

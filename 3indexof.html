@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <script>
+            function getEmailandDomainParts(){
+                var emailAddress = document.getElementById("txtEmailAddress").value;
+                var emailPart = emailAddress.substring(0, emailAddress.indexOf("@"));
+                var domainPart = emailAddress.substring(emailAddress.indexOf("@")+1);
+
+                document.getElementById("txtEmailPart").value = emailPart;
+                document.getElementById("txtDomainPart").value = domainPart;
+
+            }
+        </script>
+    </head>
+
+<body>
+    <form>
+    <table style="border: 1px solid black; font-family:Arial;">
+    <tr><td>
+        Email Address:
+    </td>
+    <td>
+        <input type="text" id="txtEmailAddress" name="EmailAddress" />
+    </td>
+    </tr>
+    <tr>
+        <td>
+        Email Part:
+    </td>
+    <td>
+        <input type="text"  id="txtEmailPart" name="EmailPart">
+    </td>
+    </tr>
+    <tr>
+        <td>
+            Domain Part:
+        </td>
+        <td>
+            <input type="text" id="txtDomainPart" name="DomainPart">
+        </td>
+    </tr>
+    <tr>
+        <td>
+    
+        </td>
+        <td>
+            <input type="button" value="get Email and Domain parts" onclick="getEmailandDomainParts()" >  
+        </td>
+    </tr>
+    
+    </table>
+    
+    
+    
+    </form>      
+    </body>
+    </html>

@@ -1,0 +1,29 @@
+<html>
+    <head>
+<script type="text/javascript">
+//// closure example: every time we click button on a web page, we want to increament the click count by 1.
+// using global variable:
+   /*  var clickCount = 0; */
+// using local variable:
+/* function increamentCount()
+{
+    var clickCount = 0;
+    return ++clickCount;
+} *///this output always 1, it is incremented for that we have to use closure function in below code
+
+//self invoking anonymous function:
+var increamentCount = (function ()
+{
+    var clickCount = 0;
+    return function()
+    {
+        return ++clickCount;
+    }
+})();
+
+</script>
+</head>
+<body>
+<input type="button" value="Click Me!" onclick="alert(increamentCount())";
+</body>
+</html>

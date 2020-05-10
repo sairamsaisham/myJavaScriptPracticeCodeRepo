@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <script>
+          ////Arguments (print arguments)
+         /*  function printArguments()
+          {
+              document.write("Arguments Count = " + arguments.length + "<br />");
+              for( var i = 0; i < arguments.length; i++)
+              {
+                  document.write("Argument " + i + " = " + arguments[i] + "<br />");
+              }
+              document.write("<br/>");
+          }
+          printArguments();
+          printArguments(1, 2);
+          printArguments("a", "b", "c"); */
+
+          ////we can pass variable number of aruguments to a javascript function.
+
+         /*  function addNumbers()
+          {
+              var sum = 0;
+              document.write("count of numbers = " + arguments.length + "<br/>");
+              for(var i = 0; i < arguments.length; i++)
+              {
+                  sum = sum + arguments[i];
+              }
+              document.write("Sum of number = " + sum + "<br/>");
+          }addNumbers();
+          addNumbers(10, 20, 30); */
+
+          ////coverting argument object in to an array.
+         /*  function printNumbers()
+          {
+              var argsArray = Array.prototype.slice.call(arguments);// or we can use array literal '[]' instead of 'Array.prototype'.
+              argsArray.sort(function (a, b){ return a - b});
+              document.write(argsArray);
+          }
+          printNumbers(10, 5, 1, 60); */
+
+          ////Recursive functions in javascript.(Recursive function is a function that calls itself)
+          //computing the factorial of a number without recursion
+          /* function factorial(n)
+          {
+              if(n == 0 || n == 1)
+              {
+                  return 1;
+              }
+
+              var result = n;
+              while( n > 1)
+              {
+                  result = result * (n - 1);
+                  n = n - 1;
+              }
+              return result;
+          }
+          document.write(factorial(5)); */
+
+          //computing the factorial of a number with recursion:
+          function factorial(n)
+          {
+              if(n <= 1) // or if(n == 0 || n == 1)
+              {
+                  return 1;
+              }
+
+              return n * factorial(n - 1);
+          }
+          document.write(factorial(5));
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

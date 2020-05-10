@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .styleClass
+        {
+            display:table-cell;
+            border:5px solid black;
+            padding:20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+     
+     <!-- 1. Using the attributes of an HTML tag. -->
+     <input type="button" value="Click Me!" id="btn"
+     onmouseover="changeColorOnMouseOver()"
+     onmouseout="changeColorOnMouseOut()" /><br><br>
+
+     <!-- How to show confirmation dialog in javascript. -->
+     <input type="submit" value="Submit" onclick="return confirmSubmit()" />
+
+     <br />
+     <br />
+    
+     <!-- Form data validation and many more. -->
+     <table>
+         <tr>
+             <td>First Name</td>
+             <td>
+                 <input type="text" id="txtFirstName" onkeyup="validateRequiredField('txtFirstName')"
+                 onblur="validateRequiredField('txtFirstName')"/>
+                  
+            </td>
+         </tr>
+         <tr>
+             <td>
+                 Last Name
+             </td>
+             <td>
+                 <input type="text" id="txtLastName" onkeyup="validateRequiredField('txtLastName')" 
+                 onblur="validateRequiredField('txtLastName')"/>
+             </td>
+         </tr>
+     </table>
+     <br /><br />
+     
+     <!-- //// 2. Assigning event handlers in javascript using DOM object property. -->
+     <input type="button" value="DOM object Property" id="btnDOM" /><br /><br />
+     
+     <!--the handler that is assigned using the DOM object property overwrites the one assigned using HTML attribute.-->
+     <input type="button" value="Click Me" id="btnDOMpropertyOverwrite" onclick="clickHandler1()" /><br /><br />
+     <input type="button" value="Click Me" id="btnLastDOMpropertyOverwrite" onclick="Handler1()" /><br /><br />
+     
+     <!--AddEventListerner()- And removeEventListener()-->
+     <input type="button" value="Clik me" id="btnAddEventL" />
+     <input type="button" value="Remove Event Handler" onclick="removeHandlers()" />
+     <br /><br />
+     
+     <!-- when you click the button both the handler methods are executed. -->
+     <input type="button" value="Click me" id="btn1" />
+     
+     <!-- attachEvent() and dettachEvent() methods  -->
+     <input type="button" value="Click me" id="btn2" /><br/><br/>
+     
+     <!--  Event object and its properties. -->
+     <input type="button" value="click me!" id="btn3" onmousemove="getEventDetails(event)" /><br /> <br /> 
+     <br />
+     <!-- <div id="result"></div> -->
+     
+     <!-- Event Bubbling in javascript:
+     -Once event handled by 'button' it got bubbled up to it's parent,
+     -so, button parent element is 'span' so, span element handled
+     -the even and it got bubbled up to its parent, i.e, 'Div element'  -->
+
+     <!-- <div class="styleClass" onclick="alert('Div clicked')">DIV element
+        <span class="styleClass" onclick="alert('span clicked')">Span element
+        <input type="button" value="Click me" onclick="alert('button clicked')">
+     </span>
+     </div><br /><br /> -->
+
+     <!-- If we remove event handlers for span and button elements,
+      - then now, if we click the button the event triggerd by its parent
+      - element i.e, DIV event handler and for span element also(to understand this, see output.) -->
+
+      <!-- <div class="styleClass" onclick="alert('Div clicked')">DIV element
+        <span class="styleClass" >Span element
+        <input type="button" value="Click me" >
+     </span>
+     </div><br /><br /> -->
+
+     <!-- when the event gets bubbled, the keyword 'this' references
+      -the current element to which the event is bubbled. 
+      Ex: we are using 'this' keyword to referance the current div element
+     - and change its border colour. when you click on the innermost
+     - <div> element, all the 3 <div> elements border get changed 
+     - due to event bubbling-->
+      <div id="div1" class="styleClass">DIV1
+          <div id="div2" class="styleClass">DIV2
+              <div id="div3" class="styleClass">DIV3
+
+              </div>
+          </div>
+      </div>
+     <script src="events.js"></script>
+
+    
+</body>
+</html>

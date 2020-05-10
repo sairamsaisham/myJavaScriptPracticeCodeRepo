@@ -1,0 +1,105 @@
+<html>
+    <head>
+        <script>
+
+            //using elseIf statement//
+          /*  var userInput = Number(prompt("Please enter your number:", ""));
+           
+           if(userInput == 1)
+           {
+               alert("your number is one");
+             
+           }
+          else if(userInput == 2)
+           {
+               alert("your number is two")
+           }
+           else if(userInput == 3)
+           {
+               alert("your number is three")
+           }
+          else
+           {
+               alert("your number is not between 1 & 3.")
+           } */
+
+           //using switch statement//
+           /* var userInput = Number(prompt("Please enter your number:", ""));
+           switch(userInput){
+               case 1:
+              alert("your number is one");
+              break;
+              case 2:
+              alert("your number is two");
+              break;
+              case 3:
+              alert("your number is three");
+              break;
+              default:
+              alert("your number is not between 1 & 3");
+              break;
+           } */
+
+           //if we have same piece of code to be executed then we can combine multiple statements together//
+          /*  var userInput = Number(prompt("Please enter your number:", ""));
+           switch(userInput){
+               case 1:
+               case 2:
+               case 3:
+              alert("your number is: " + userInput);
+              break;
+              default:
+              alert("your number is not between 1 & 3");
+              break;
+           } */
+
+           //using ternary operators to know the even or odd numbers //
+           /* var userInput = Number(prompt("Please enter a number:", ""));
+           var monthName = userInput%2 == 0 ? "your number is even" : "your number is odd";
+
+           alert(monthName); */
+
+           //with multiple statements per case with a ternary operator//
+           /* var userInput = Number(prompt("Please enter a number:", ""));
+           userInput%2 == 0 ? (alert("your number is even"), alert("your number is " + userInput))
+                            : (alert("your number is odd"), alert("your number is " + userInput)); */
+
+            //Display the month name based on the month number using ternary operator//
+           /*  var userInput = Number(prompt("Please enter a month number-1 2 3:", ""));
+            var monthName = userInput == 1 ? "January" : userInput == 2 ? "February" : userInput == 3 ? "March" : "unknown month number";
+
+            alert(monthName); */
+
+            //Display the month name based on the month number using else if statement//
+            var userInput = Number(prompt("Please enter a month number-1 2 3:", ""));
+            var monthName = "";
+            if(userInput == 1)
+            {
+                monthName = "January"
+            }
+            else if(userInput == 2)
+            {
+                monthName = "February"
+            }
+            else if(userInput == 3)
+            {
+                monthName = "March"
+            }
+            else{
+                monthName =  "Unknown month number"
+            }
+
+            alert(monthName);
+
+ 
+
+                                
+           
+        </script>
+    </head>
+    <body>
+        <form>
+
+        </form>
+    </body>
+</html>
